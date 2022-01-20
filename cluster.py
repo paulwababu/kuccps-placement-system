@@ -126,3 +126,15 @@ acp = aggregate_cluster / 84 #aggregate cluster is Y
 wcp = sqrt(rcp * acp) * 48 #wcp is the cluster points
 print(wcp)
 
+"""
+- Now that the system is working for people who do nursing,
+we head over to the next part, asking your units,
+then it shows you units you can do in one university
+(according to cutoff points)
+after its done doing that successfully,
+it then compares units to all universities
+
+- Keep in mind we shall need a python function that 
+calculates the cluster regardless of the units done
+"""
+
