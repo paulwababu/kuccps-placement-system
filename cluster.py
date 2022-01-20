@@ -58,7 +58,7 @@ where, C = Cluster Points
 #Y = {'kiswahili', 'business', 'history'}
 
 #list all subjects by groups
-
+"""
 #group1
 english = {}
 kiswahili = {}
@@ -124,17 +124,21 @@ aggregate_cluster = (biology+chemistry+maths+english+kiswahili+business+history)
 rcp = raw_cluster / 48 #raw_cluster is X
 acp = aggregate_cluster / 84 #aggregate cluster is Y
 wcp = sqrt(rcp * acp) * 48 #wcp is the cluster points
-print(wcp)
+print(wcp)"""
 
 """
-- Now that the system is working for people who do nursing,
-we head over to the next part, asking your units,
-then it shows you units you can do in one university
-(according to cutoff points)
-after its done doing that successfully,
-it then compares units to all universities
-
-- Keep in mind we shall need a python function that 
-calculates the cluster regardless of the units done
+- Now that the system is working for people who do nursing only,
+we head over to the next part, asking for all units done
+Then the code goes through all courses and calculates the cluster
+according to the major four units, X, to show you all courses you can do 
+in their consecutive universities
+We need a csv for subjects required for all courses across all Universities
+We need cluster calculating function according to units done
 """
 
+import pandas as pd
+
+course_guide = pd.read_csv("course_guide.csv")
+#print(course_guide.head())
+
+cut_off_15 = course_guide['2015_cut_off'].dropna()
